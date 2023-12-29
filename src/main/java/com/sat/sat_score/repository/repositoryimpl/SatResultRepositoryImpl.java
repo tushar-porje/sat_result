@@ -70,7 +70,9 @@ public class SatResultRepositoryImpl implements SatResultRepository{
 
     @Override
     public boolean getPassStatus(long score) {
-        if(score>30) return true;
+        long maxScore=1600;
+        long percentScored=(score/maxScore)*100;
+        if(percentScored>30) return true;
         return false;
     }
     
